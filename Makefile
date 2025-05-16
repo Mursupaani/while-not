@@ -16,12 +16,12 @@ SRCS		= ./src/main.c
 
 OBJS		= $(SRCS:%.c=%.o)
 CC			= cc
-C_FLAGS		= -Wall -Wextra -Werror -g
+C_FLAGS		= -Wall -Wextra -Werror -g -I include
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(C_FLAGS) $(OBJS) -L lib -lraylib -o $(NAME)
+	$(CC) $(C_FLAGS) $(OBJS) -L lib -lraylib -lm -ldl -lpthread -lGL -lrt -lX11 -o $(NAME)
 
 %.o: %.c $(HEADER) $(LIBFT_H)
 	$(CC) $(C_FLAGS) -c $< -o $@
