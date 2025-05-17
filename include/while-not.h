@@ -2,8 +2,10 @@
 # define WHILE_NOT_H
 # include <stdio.h>
 # include <unistd.h>
+# include <curl/curl.h>
 # include "raylib.h"
 # include "raymath.h"
+
 
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080

@@ -21,7 +21,7 @@ C_FLAGS		= -Wall -Wextra -Werror -g -I include
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(C_FLAGS) $(OBJS) -L lib -lraylib -lm -ldl -lpthread -lGL -lrt -lX11 -o $(NAME)
+	$(CC) $(C_FLAGS) $(OBJS) -L lib -lraylib -lm -ldl -lpthread -lGL -lrt -lX11 -lcurl -o $(NAME)
 
 %.o: %.c $(HEADER) $(LIBFT_H)
 	$(CC) $(C_FLAGS) -c $< -o $@
