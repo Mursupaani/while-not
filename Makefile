@@ -12,7 +12,8 @@
 
 NAME		= while-not.out
 
-SRCS		= ./src/main.c
+SRCS		=	./src/main.c \
+				./src/api.c
 
 OBJS		= $(SRCS:%.c=%.o)
 CC			= cc
@@ -21,7 +22,8 @@ C_FLAGS		= -Wall -Wextra -Werror -g -I include
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(C_FLAGS) $(OBJS) -L lib -lraylib -lm -ldl -lpthread -lGL -lrt -lX11 -lcurl -o $(NAME)
+	$(CC) $(C_FLAGS) $(OBJS) -lcjson -L lib -lraylib -lm -ldl -lpthread -lGL -lrt -lX11 -lcurl -o $(NAME)
+	make clean
 
 %.o: %.c $(HEADER) $(LIBFT_H)
 	$(CC) $(C_FLAGS) -c $< -o $@
